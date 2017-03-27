@@ -3,16 +3,38 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Page One</ion-title>
+    <ion-title>Second Oportunity</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <ion-grid>
+    <ion-row padding class="space">
+      <ion-col col-8 padding-left>
+          <img src="../assets/img/coche.png" class="dimension-photo" (click)="coches()">
+      </ion-col>
+      <ion-col >
+        <img src="../assets/img/moto.png" class="dimension-photo" (click)="motos()">
+      </ion-col>
+    </ion-row>
+    <ion-row padding class="space">
+      <ion-col col-8 padding-left>
+        <img src="../assets/img/movil.png" class="dimension-photo" (click)="moviles()">
+      </ion-col>
+      <ion-col >
+        <img src="../assets/img/consola.png" class="dimension-photo" (click)="consolas()">
+      </ion-col>
+    </ion-row>
+    <ion-row padding class="space">
+      <ion-col col-8 padding-left>
+        <img src="../assets/img/sonido.png" class="dimension-photo" (click)="sonido()">
+      </ion-col>
+      <ion-col >
+        <img src="../assets/img/informatica.png" class="dimension-photo" (click)="informatica()">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
 </ion-content>

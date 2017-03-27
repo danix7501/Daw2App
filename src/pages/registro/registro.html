@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-top>
+  <ion-list>
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellidos</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>email</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label>Repetir contraseña</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button (click)="registrar()">Registrar</button>
+    <button ion-button (click)="cancelar()">Cancelar</button>
+  </div>
+</ion-content>
