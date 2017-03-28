@@ -8,6 +8,8 @@ import {ConsolasPage} from "../consolas/consolas";
 import {SonidoPage} from "../sonido/sonido";
 import {InformaticaPage} from "../informatica/informatica";
 
+import { LoginPage } from '../login/login';
+
 @Component({
   selector: 'page-page1',
   templateUrl: 'page1.html'
@@ -15,8 +17,17 @@ import {InformaticaPage} from "../informatica/informatica";
 export class Page1 {
 
   constructor(public navCtrl: NavController) {
+    if (!this.isLoggedin()) {
+      console.log('No estas logeado');
+      this.navCtrl.push(LoginPage);
+    }
 
+  }
 
+  isLoggedin(){
+    if (window.localStorage.getItem('currentuser')){
+      return true;
+    }
   }
 
   coches(){

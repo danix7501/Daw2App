@@ -5,22 +5,17 @@
 </ion-header>
 
 <ion-content padding-top>
-  <ion-list>
-    <ion-item>
-      <ion-label>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <div padding>
+  <form>
+    <ion-input type="text" name="email" [(ngModel)]="email" placeholder="email"></ion-input>
+    <ion-input type="password" name="password" [(ngModel)]="password" placeholder="password"></ion-input>
+    <button ion-button round block (click)="login()">Login</button>
+    <button ion-button round block (click)="cancelar()">Cancelar</button>
+  </form>
+ <!-- <div padding>
       <button ion-button (click)="login()">Login</button>
     <button ion-button (click)="cancelar()">Cancelar</button>
-  </div>
+  </div>-->
+
 </ion-content>
 
 

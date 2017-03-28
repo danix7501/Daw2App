@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { AuthProviders, AuthMethods, AngularFire } from 'angularfire2';
 
 /*
   Generated class for the Login page.
@@ -13,14 +14,36 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  email: any;
+  password: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
   login(){
-    this.navCtrl.pop();
+      this.af.auth.login({
+          email: this.email,
+          password: this.password
+        },
+        {
+          provider: AuthProviders.Password,
+          method: AuthMethods.Password
+        }).then((response) => {
+        console.log('Login success' + JSON.stringify(response));
+        let currentuser = {
+          email: response.auth.email,
+          picture: response.auth.photoURL
+        };
+        window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
+        this.navCtrl.pop();
+      }).catch((error) => {
+        console.log(error);
+      })
+
+    //this.navCtrl.pop();
   }
 
   cancelar(){

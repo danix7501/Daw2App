@@ -15,6 +15,16 @@ import {MotosPage} from "../pages/motos/motos";
 import {MovilesPage} from "../pages/moviles/moviles";
 import {SonidoPage} from "../pages/sonido/sonido";
 
+import { AngularFireModule } from 'angularfire2';
+
+export const config = {
+  apiKey: "AIzaSyBuwR5hB4awktamkaZ1BqoHSYzVdAHfngE",
+  authDomain: "daw2-1cd21.firebaseapp.com",
+  databaseURL: "https://daw2-1cd21.firebaseio.com",
+  storageBucket: "daw2-1cd21.appspot.com",
+  messagingSenderId: "753805666985"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -30,7 +40,8 @@ import {SonidoPage} from "../pages/sonido/sonido";
     SonidoPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
